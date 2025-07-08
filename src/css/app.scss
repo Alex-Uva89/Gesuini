@@ -1,0 +1,15 @@
+// app global css in SCSS form
+
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+
+.libertinus-mono-regular {
+  font-family: "Libertinus Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libertinus-mono-bold {
+  font-family: "Libertinus Mono", monospace;
+  font-weight: bold;
+  font-style: normal;
+}
