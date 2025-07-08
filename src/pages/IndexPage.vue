@@ -1,10 +1,13 @@
 <template>
-  <q-page class="q-pa-md bg-sand text-burgundy">
-    <div  v-for="category in categories" :key="category._id">
+  <q-page class="q-pa-md bg-sand q-mb-lg text-burgundy">
+    <div  v-for="category in categories" :key="category._id" class="container">
       <q-expansion-item>
         <template v-slot:header>
-          <q-item-section class="text-gesuini text-h6 libertinus-mono-bold text-uppercase">
+          <q-item-section class="text-gesuini libertinus-mono-bold text-uppercase">
             {{ category.title }}
+            <q-item-label caption lines="2" class="text-xs">
+              {{ category.description }}
+            </q-item-label>
           </q-item-section>
         </template>
         
@@ -38,9 +41,9 @@
     </div>
 
 
-    <q-chip class="gesuini-cover">
+    <div class="gesuini-cover">
       coperto: 2 euro
-    </q-chip>
+    </div>
   </q-page>
 </template>
 
@@ -55,6 +58,7 @@ onMounted(async () => {
   const result = await sanity.fetch(`*[_type == "category"] | order(orderView asc){
     _id,
     title,
+    description,
     orderView,
     "dishes": *[_type == "dish" && references(^._id)] | order(orderView asc){
       _id,
@@ -85,9 +89,14 @@ onMounted(async () => {
 
 .gesuini-cover{
   position: fixed;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%);
+  bottom: 0%;
+  width: 100%;
+  background-color: #b93131;
+  text-align: center;
+  color: white;
 }
 
+.container{
+  overflow-y: auto;
+}
 </style>
