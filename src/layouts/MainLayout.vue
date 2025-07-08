@@ -31,7 +31,7 @@
   background-color: #b93131;
   text-align: center;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 </style>

@@ -76,6 +76,7 @@ onMounted(async () => {
 
 .text-gesuini{
   color: #b93131;
+  font-size: .9rem;
 }
 
 .bg-gesuini{
