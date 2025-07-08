@@ -7,6 +7,10 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <div class="gesuini-cover">
+      coperto: 2 euro
+    </div>
   </q-layout>
 </template>
 
@@ -18,6 +22,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.gesuini-cover{
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  background-color: #b93131;
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
 }
 
 </style>

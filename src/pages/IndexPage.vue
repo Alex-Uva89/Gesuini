@@ -39,11 +39,6 @@
       </q-expansion-item>
       <q-separator class="bg-gesuini"/>
     </div>
-
-
-    <div class="gesuini-cover">
-      coperto: 2 euro
-    </div>
   </q-page>
 </template>
 
@@ -85,15 +80,6 @@ onMounted(async () => {
 
 .bg-gesuini{
   background-color: #b93131;
-}
-
-.gesuini-cover{
-  position: fixed;
-  bottom: 0%;
-  width: 100%;
-  background-color: #b93131;
-  text-align: center;
-  color: white;
 }
 
 .container{
