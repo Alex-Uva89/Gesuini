@@ -11,7 +11,8 @@
     />
 
     <q-dialog v-model="dialog" full-width persistent>
-      <q-card class="bg-white column" style="height: 90vh; position: relative;">
+      <q-card class="bg-white" style="height: 90vh; display: flex; flex-direction: column;">
+        
         <!-- Bottone X -->
         <q-btn
           icon="close"
@@ -21,17 +22,18 @@
           size="lg"
           dense
           @click="dialog = false"
-          class="absolute-bottom-right z-top"
+          class="absolute-top-right z-top q-ma-sm"
         />
 
-        <!-- CONTENUTO SCORREVOLE -->
+        <!-- Toolbar -->
         <q-toolbar class="bg-yellow-4 text-black border-bottom q-pa-sm" style="border-bottom: 2px solid black;">
           <div class="text-h6">
             Menu Eventi e compleanni bambini
           </div>
         </q-toolbar>
-        <div class="q-pa-md scroll" style="flex: 1 1 auto; overflow-y: auto; padding-bottom: 3rem;">
 
+        <!-- CONTENUTO SCORREVOLE -->
+        <div class="q-pa-md" style="flex: 1; overflow-y: auto;">
           <div v-for="category in categories" :key="category._id" class="container">
             <div v-if="category.specialMenu">
               <q-expansion-item>
@@ -78,7 +80,7 @@
           </div>
         </div>
 
-        <!-- BANNER FISSO IN BASSO -->
+        <!-- FOOTER FISSO -->
         <div class="gesuini-cover bg-yellow-4 text-black">
           coperto: 1 euro
         </div>
@@ -99,16 +101,10 @@ const dialog = ref(false)
 
 <style scoped>
 .gesuini-cover {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   text-align: center;
   font-size: 1.2rem;
   padding: 0.5rem;
   border-top: 2px solid black;
-  background-color: #FFEB3B; /* stesso giallo */
-  color: black;
-  z-index: 1;
+  flex-shrink: 0;
 }
 </style>
