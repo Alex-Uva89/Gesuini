@@ -21,16 +21,16 @@
           size="lg"
           dense
           @click="dialog = false"
-          class="absolute-top-right q-ma-sm z-top"
+          class="absolute-bottom-right z-top"
         />
 
         <!-- CONTENUTO SCORREVOLE -->
+        <q-toolbar class="bg-yellow-4 text-black border-bottom q-pa-sm" style="border-bottom: 2px solid black;">
+          <div class="text-h6">
+            Menu Eventi e compleanni bambini
+          </div>
+        </q-toolbar>
         <div class="q-pa-md scroll" style="flex: 1 1 auto; overflow-y: auto; padding-bottom: 3rem;">
-          <q-toolbar class="bg-yellow text-black border-bottom q-pa-sm" style="border-bottom: 2px solid black;">
-            <div class="text-h6 text-center libertinus-mono-bold">
-              Menu Eventi e compleanni bambini
-            </div>
-          </q-toolbar>
 
           <div v-for="category in categories" :key="category._id" class="container">
             <div v-if="category.specialMenu">
@@ -79,7 +79,7 @@
         </div>
 
         <!-- BANNER FISSO IN BASSO -->
-        <div class="gesuini-cover bg-yellow text-black">
+        <div class="gesuini-cover bg-yellow-4 text-black">
           coperto: 1 euro
         </div>
       </q-card>
